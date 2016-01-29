@@ -1,10 +1,10 @@
 #include "debugUtils.h"
 
 
-void debugPrint(int level, const char* format, ...)
+void debugPrint(int mask, const char* format, ...)
 {
 #ifdef DEBUG
-    if (level <= DEBUG)
+    if ((mask & DEBUG) == mask)
     {
         va_list args;  //Holds a list of arguments with variable length
         va_start(args, format);  //Initialize args with all the arguments that follow format in the parameter list

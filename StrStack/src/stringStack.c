@@ -16,7 +16,7 @@ void destroyStrStack(StrStack* stacke)
     while (stacke->stack)
     {
         p = stacke->stack;
-        printf("[%d][%s]\n", stacke->count, p->str);
+        //printf("[%d][%s]\n", stacke->count, p->str);
         stacke->stack = (stacke->stack)->next;
         free(p->str);
         free(p);
@@ -29,7 +29,7 @@ void printStrStack(StrStack stack)
     StrStackNode* p = stack.stack;
     while (p)
     {
-        printf("[%s]-> ", p->str);
+        printf("[%s]->", p->str);
         p = p->next;
     }
     printf("End.\n");
@@ -43,7 +43,8 @@ StrStackNode* createNode(char* str)
     {
         int len = strlen(str);
         newNode->str = malloc(len+1);  //Allocate memory for the string on the heap
-        strncpy(newNode->str, str, len+1);
+        strncpy(newNode->str, str, len);
+        newNode->str[len] = '\0';
         newNode->next = NULL;
     }
 

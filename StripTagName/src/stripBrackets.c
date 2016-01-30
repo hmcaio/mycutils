@@ -24,7 +24,7 @@ void stripTagName(char* tag)
         return;
     
     int i = 0, j = 0;
-    while (tag[i] != ' ' && tag[i] != '>')
+    while (tag[i] && tag[i] != ' ' && tag[i] != '>')
     {
         if (tag[i] != '<' && tag[i] != '/')
             tag[j++] = tag[i];

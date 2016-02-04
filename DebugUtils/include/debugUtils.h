@@ -10,7 +10,7 @@
 
 
 /**
- * debugPrint
+ * printd
  * Helper function to print debug messages to stdout. The messages are
  * only printed if the bits of the mask are on (bit equals to 1) in the
  * DEBUG macro. If DEBUG is not defined, no message is printed.
@@ -23,7 +23,9 @@
  *  ... (additional arguments): Additional arguments that may be used in
  *      the format string.
  */
-void debugPrint(int mask, const char* format, ...);
+void printd(int mask, const char* format, ...);
+
+int fprintd(int mask, const char* format, ...);
 
 
 #endif

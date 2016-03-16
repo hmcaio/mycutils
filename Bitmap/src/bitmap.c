@@ -98,6 +98,7 @@ int bitmapClear(Bitmap* bm)
 {
     if (!(*bm))
         return 0;
+    
     //Set every bit with 0
     for (int i = 0; i < (*bm)->sizeInBytes; i++)
         (*bm)->bits[i] = 0;
